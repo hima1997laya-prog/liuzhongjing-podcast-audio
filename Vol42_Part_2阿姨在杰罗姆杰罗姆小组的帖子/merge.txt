@@ -1,0 +1,2 @@
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol42_Part_2阿姨在杰罗姆杰罗姆小组的帖子/Vol42_Part_2阿姨在杰罗姆杰罗姆小组的帖子_orig.mp3'
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol42_Part_2阿姨在杰罗姆杰罗姆小组的帖子/Vol42_Part_2阿姨在杰罗姆杰罗姆小组的帖子_cmt.mp3'

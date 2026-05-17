@@ -1,0 +1,2 @@
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol14_1_秋收时节的世界帝国/Vol14_1_秋收时节的世界帝国_orig.mp3'
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol14_1_秋收时节的世界帝国/Vol14_1_秋收时节的世界帝国_cmt.mp3'

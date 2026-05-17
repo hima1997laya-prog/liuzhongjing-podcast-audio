@@ -1,0 +1,2 @@
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol41_Part_1短影评/Vol41_Part_1短影评_orig.mp3'
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol41_Part_1短影评/Vol41_Part_1短影评_cmt.mp3'

@@ -1,0 +1,2 @@
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol12_3_游士与启蒙者/Vol12_3_游士与启蒙者_orig.mp3'
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol12_3_游士与启蒙者/Vol12_3_游士与启蒙者_cmt.mp3'

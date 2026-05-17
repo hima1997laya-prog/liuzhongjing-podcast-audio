@@ -1,0 +1,2 @@
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol17_2_蛮族输入秩序/Vol17_2_蛮族输入秩序_orig.mp3'
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol17_2_蛮族输入秩序/Vol17_2_蛮族输入秩序_cmt.mp3'

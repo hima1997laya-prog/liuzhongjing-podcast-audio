@@ -1,0 +1,2 @@
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol11_2_封建与宗法/Vol11_2_封建与宗法_orig.mp3'
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol11_2_封建与宗法/Vol11_2_封建与宗法_cmt.mp3'

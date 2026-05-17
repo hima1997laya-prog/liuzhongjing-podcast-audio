@@ -1,0 +1,2 @@
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol10_1_巫与德/Vol10_1_巫与德_orig.mp3'
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol10_1_巫与德/Vol10_1_巫与德_cmt.mp3'

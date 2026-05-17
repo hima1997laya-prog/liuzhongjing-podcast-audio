@@ -1,0 +1,2 @@
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol18_4_罗马与万国/Vol18_4_罗马与万国_orig.mp3'
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol18_4_罗马与万国/Vol18_4_罗马与万国_cmt.mp3'

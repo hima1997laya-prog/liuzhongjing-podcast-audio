@@ -1,0 +1,2 @@
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol13_3_贵族的反动和毁灭/Vol13_3_贵族的反动和毁灭_orig.mp3'
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol13_3_贵族的反动和毁灭/Vol13_3_贵族的反动和毁灭_cmt.mp3'

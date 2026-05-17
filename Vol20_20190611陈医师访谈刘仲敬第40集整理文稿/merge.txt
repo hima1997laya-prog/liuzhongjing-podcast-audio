@@ -1,0 +1,2 @@
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol20_20190611陈医师访谈刘仲敬第40集整理文稿/Vol20_20190611陈医师访谈刘仲敬第40集整理文稿_orig.mp3'
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol20_20190611陈医师访谈刘仲敬第40集整理文稿/Vol20_20190611陈医师访谈刘仲敬第40集整理文稿_cmt.mp3'

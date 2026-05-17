@@ -1,0 +1,2 @@
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol38_刘仲敬360doc言论补充/Vol38_刘仲敬360doc言论补充_orig.mp3'
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol38_刘仲敬360doc言论补充/Vol38_刘仲敬360doc言论补充_cmt.mp3'

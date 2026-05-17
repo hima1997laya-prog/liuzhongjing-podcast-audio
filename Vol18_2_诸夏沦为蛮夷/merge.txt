@@ -1,0 +1,2 @@
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol18_2_诸夏沦为蛮夷/Vol18_2_诸夏沦为蛮夷_orig.mp3'
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol18_2_诸夏沦为蛮夷/Vol18_2_诸夏沦为蛮夷_cmt.mp3'

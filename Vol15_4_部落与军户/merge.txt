@@ -1,0 +1,2 @@
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol15_4_部落与军户/Vol15_4_部落与军户_orig.mp3'
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol15_4_部落与军户/Vol15_4_部落与军户_cmt.mp3'

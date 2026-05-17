@@ -1,0 +1,2 @@
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol14_4_家族征服帝国/Vol14_4_家族征服帝国_orig.mp3'
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol14_4_家族征服帝国/Vol14_4_家族征服帝国_cmt.mp3'

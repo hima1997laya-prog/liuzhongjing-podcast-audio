@@ -1,0 +1,2 @@
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol12_1_诸夏与夷狄/Vol12_1_诸夏与夷狄_orig.mp3'
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol12_1_诸夏与夷狄/Vol12_1_诸夏与夷狄_cmt.mp3'

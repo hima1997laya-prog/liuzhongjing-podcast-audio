@@ -1,0 +1,2 @@
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol45_part_1_答疑解惑/Vol45_part_1_答疑解惑_orig.mp3'
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol45_part_1_答疑解惑/Vol45_part_1_答疑解惑_cmt.mp3'

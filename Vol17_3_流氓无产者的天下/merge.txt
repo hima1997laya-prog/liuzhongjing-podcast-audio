@@ -1,0 +1,2 @@
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol17_3_流氓无产者的天下/Vol17_3_流氓无产者的天下_orig.mp3'
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol17_3_流氓无产者的天下/Vol17_3_流氓无产者的天下_cmt.mp3'

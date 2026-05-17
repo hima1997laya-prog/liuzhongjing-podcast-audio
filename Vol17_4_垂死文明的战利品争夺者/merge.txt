@@ -1,0 +1,2 @@
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol17_4_垂死文明的战利品争夺者/Vol17_4_垂死文明的战利品争夺者_orig.mp3'
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol17_4_垂死文明的战利品争夺者/Vol17_4_垂死文明的战利品争夺者_cmt.mp3'

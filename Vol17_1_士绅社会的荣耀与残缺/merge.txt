@@ -1,0 +1,2 @@
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol17_1_士绅社会的荣耀与残缺/Vol17_1_士绅社会的荣耀与残缺_orig.mp3'
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol17_1_士绅社会的荣耀与残缺/Vol17_1_士绅社会的荣耀与残缺_cmt.mp3'

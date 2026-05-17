@@ -1,0 +1,2 @@
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol15_2_蛮族与士族/Vol15_2_蛮族与士族_orig.mp3'
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol15_2_蛮族与士族/Vol15_2_蛮族与士族_cmt.mp3'

@@ -1,0 +1,2 @@
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol16_2_蛮族佣兵的兴起和没落/Vol16_2_蛮族佣兵的兴起和没落_orig.mp3'
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol16_2_蛮族佣兵的兴起和没落/Vol16_2_蛮族佣兵的兴起和没落_cmt.mp3'

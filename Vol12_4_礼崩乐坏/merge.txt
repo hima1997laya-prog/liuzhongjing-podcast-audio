@@ -1,0 +1,2 @@
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol12_4_礼崩乐坏/Vol12_4_礼崩乐坏_orig.mp3'
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol12_4_礼崩乐坏/Vol12_4_礼崩乐坏_cmt.mp3'

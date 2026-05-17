@@ -1,0 +1,2 @@
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol09_序言经与史/Vol09_序言经与史_orig.mp3'
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol09_序言经与史/Vol09_序言经与史_cmt.mp3'

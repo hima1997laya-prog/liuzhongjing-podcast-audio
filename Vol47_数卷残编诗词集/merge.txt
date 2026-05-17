@@ -1,0 +1,2 @@
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol47_数卷残编诗词集/Vol47_数卷残编诗词集_orig.mp3'
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol47_数卷残编诗词集/Vol47_数卷残编诗词集_cmt.mp3'

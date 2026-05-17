@@ -1,0 +1,2 @@
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol42_Part_4评论/Vol42_Part_4评论_orig.mp3'
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol42_Part_4评论/Vol42_Part_4评论_cmt.mp3'

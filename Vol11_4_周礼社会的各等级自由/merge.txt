@@ -1,0 +1,2 @@
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol11_4_周礼社会的各等级自由/Vol11_4_周礼社会的各等级自由_orig.mp3'
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol11_4_周礼社会的各等级自由/Vol11_4_周礼社会的各等级自由_cmt.mp3'

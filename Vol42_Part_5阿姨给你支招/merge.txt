@@ -1,0 +1,2 @@
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol42_Part_5阿姨给你支招/Vol42_Part_5阿姨给你支招_orig.mp3'
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol42_Part_5阿姨给你支招/Vol42_Part_5阿姨给你支招_cmt.mp3'

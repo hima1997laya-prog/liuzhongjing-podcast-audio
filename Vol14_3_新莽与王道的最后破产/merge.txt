@@ -1,0 +1,2 @@
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol14_3_新莽与王道的最后破产/Vol14_3_新莽与王道的最后破产_orig.mp3'
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol14_3_新莽与王道的最后破产/Vol14_3_新莽与王道的最后破产_cmt.mp3'

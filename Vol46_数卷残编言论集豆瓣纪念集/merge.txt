@@ -1,0 +1,2 @@
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol46_数卷残编言论集豆瓣纪念集/Vol46_数卷残编言论集豆瓣纪念集_orig.mp3'
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol46_数卷残编言论集豆瓣纪念集/Vol46_数卷残编言论集豆瓣纪念集_cmt.mp3'

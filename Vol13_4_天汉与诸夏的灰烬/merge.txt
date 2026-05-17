@@ -1,0 +1,2 @@
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol13_4_天汉与诸夏的灰烬/Vol13_4_天汉与诸夏的灰烬_orig.mp3'
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol13_4_天汉与诸夏的灰烬/Vol13_4_天汉与诸夏的灰烬_cmt.mp3'

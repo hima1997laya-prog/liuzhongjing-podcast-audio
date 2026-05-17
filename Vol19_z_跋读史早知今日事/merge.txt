@@ -1,0 +1,2 @@
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol19_z_跋读史早知今日事/Vol19_z_跋读史早知今日事_orig.mp3'
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol19_z_跋读史早知今日事/Vol19_z_跋读史早知今日事_cmt.mp3'

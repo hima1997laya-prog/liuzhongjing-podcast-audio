@@ -1,0 +1,2 @@
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol18_1_新春秋时代的世界秩序殖民主义在远东/Vol18_1_新春秋时代的世界秩序殖民主义在远东_orig.mp3'
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol18_1_新春秋时代的世界秩序殖民主义在远东/Vol18_1_新春秋时代的世界秩序殖民主义在远东_cmt.mp3'

@@ -1,0 +1,2 @@
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol13_1_军国主义与群众的解放/Vol13_1_军国主义与群众的解放_orig.mp3'
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol13_1_军国主义与群众的解放/Vol13_1_军国主义与群众的解放_cmt.mp3'

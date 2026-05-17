@@ -1,0 +1,2 @@
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol16_4_东亚世界体系/Vol16_4_东亚世界体系_orig.mp3'
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol16_4_东亚世界体系/Vol16_4_东亚世界体系_cmt.mp3'

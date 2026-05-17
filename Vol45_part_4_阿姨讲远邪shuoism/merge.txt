@@ -1,0 +1,2 @@
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol45_part_4_阿姨讲远邪shuoism/Vol45_part_4_阿姨讲远邪shuoism_orig.mp3'
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol45_part_4_阿姨讲远邪shuoism/Vol45_part_4_阿姨讲远邪shuoism_cmt.mp3'

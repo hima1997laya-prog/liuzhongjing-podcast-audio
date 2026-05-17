@@ -1,0 +1,2 @@
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol45_part_5_八卦/Vol45_part_5_八卦_orig.mp3'
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol45_part_5_八卦/Vol45_part_5_八卦_cmt.mp3'

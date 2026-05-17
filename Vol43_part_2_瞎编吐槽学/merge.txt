@@ -1,0 +1,2 @@
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol43_part_2_瞎编吐槽学/Vol43_part_2_瞎编吐槽学_orig.mp3'
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol43_part_2_瞎编吐槽学/Vol43_part_2_瞎编吐槽学_cmt.mp3'

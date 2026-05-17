@@ -1,0 +1,2 @@
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol18_3_新战国时代的挑战者顺应者和投机者/Vol18_3_新战国时代的挑战者顺应者和投机者_orig.mp3'
+file '/root/.openclaw/workspace/liuzhongjing-podcast-audio/Vol18_3_新战国时代的挑战者顺应者和投机者/Vol18_3_新战国时代的挑战者顺应者和投机者_cmt.mp3'
