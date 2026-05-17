@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>学习 · 刘仲敬播客</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;background:#1a1a2e;color:#eee;max-width:900px;margin:0 auto;padding:20px;}
+h1{font-size:1.5em;margin:20px 0 5px;color:#e94560;}
+.subtitle{color:#888;margin-bottom:20px;font-size:0.9em;}
+.volume{margin:15px 0;background:#16213e;border-radius:12px;padding:15px;}
+.volume h2{font-size:1.1em;color:#0f3460;background:#e94560;display:inline-block;padding:3px 12px;border-radius:6px;font-size:0.85em;margin-bottom:10px;color:#fff;}
+.item{background:#0f3460;border-radius:8px;padding:10px 12px;margin:6px 0;display:flex;align-items:center;gap:10px;}
+.item audio{flex:1;min-width:200px;height:30px;}
+.item .title{flex:2;font-size:0.85em;line-height:1.3;color:#ccc;}
+.footer{text-align:center;margin:30px 0;color:#555;font-size:0.8em;}
+@media(max-width:600px){.item{flex-wrap:wrap;}.item audio{flex:1 1 100%;order:3;}.item .title{flex:1 1 100%;}}
+</style>
+</head>
+<body>
+<h1>📖 学习·刘仲敬</h1>
+<p class="subtitle">原文朗读 + 大白话解释 · 全程本地AI零token生成</p>
+
+<script>
+// Build audio list from file structure
+const files = {
+  "01_论国史": ["刘仲敬_第一卷_壹_论国史.mp3"],
+  "02_论儒学秦学马学": ["刘仲敬_第一卷_贰_论儒学秦学马学.mp3"],
+  "03_史记项羽vs韩信": ["刘仲敬_第一卷_叁_史记项羽vs韩信.mp3"],
+  "04_东观汉记书评": ["刘仲敬_第一卷_肆_东观汉记书评.mp3"]
+};
+
+fetch('manifest.json')
+  .then(r=>r.json())
+  .then(data=>render(data))
+  .catch(()=>render(files));
+
+function render(data) {
+  let html = '';
+  for (const [vol, items] of Object.entries(data)) {
+    html += '<div class="volume"><h2>' + vol.replace(/^(\d+)_/, '') + '</h2>';
+    for (const [title, file] of Object.entries(items)) {
+      html += '<div class="item">';
+      html += '<div class="title">' + title + '</div>';
+      html += '<audio controls preload="none"><source src="' + encodeURIComponent(vol) + '/' + encodeURIComponent(file) + '" type="audio/mpeg"></audio>';
+      html += '</div>';
+    }
+    html += '</div>';
+  }
+  document.getElementById('list').innerHTML = html;
+}
+</script>
+<div id="list"><p style="text-align:center;padding:40px;color:#666;">正在加载音频列表...</p></div>
+<div class="footer">龙一 🐉 · 龙五 🍎 · 零token · 2026</div>
+</body>
+</html>
