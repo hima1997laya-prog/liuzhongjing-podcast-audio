@@ -6,25 +6,27 @@
 <title>刘仲敬 · 学习播客</title>
 <style>
 /* ============================================================
-   暖色调 · 小清新 · 大字版
-   版式：1/3 音频 + 1/3 播客文字 + 1/3 原文
+   参考风格：阅读App式 · 暖色小清新 · 大字版
+   每篇文章卡片 = 干净header + 精美音频条 + 正文
    ============================================================ */
 
 :root {
-  --bg: #FFF8F0;
+  --bg: #F8F5F0;
   --card-bg: #FFFFFF;
-  --card-border: #F0E6D8;
-  --accent: #E8876A;
-  --accent-light: #FDF0EA;
-  --accent-dark: #D47050;
-  --text: #4A3728;
-  --text-secondary: #8B7D6B;
-  --text-muted: #B8A99A;
-  --green: #7EB5A6;
-  --green-light: #E8F5F0;
-  --cream: #FFF5E6;
-  --gold: #D4A56A;
-  --shadow: rgba(180, 140, 100, 0.1);
+  --card-border: #EDE8E0;
+  --text-primary: #2D2418;
+  --text-secondary: #7A6B5C;
+  --text-muted: #B5A89A;
+  --accent: #D4835A;
+  --accent-light: #FFF0E8;
+  --accent-dark: #B86A44;
+  --green: #7EAB94;
+  --green-light: #EFF6F2;
+  --cream: #FFFBF5;
+  --gold: #C9A96E;
+  --pink-soft: #F5DED0;
+  --shadow: rgba(160, 120, 80, 0.06);
+  --shadow-strong: rgba(160, 120, 80, 0.12);
   --radius: 16px;
   --radius-sm: 10px;
 }
@@ -32,84 +34,61 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  font-family: -apple-system, 'PingFang SC', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+  font-family: -apple-system, 'PingFang SC', 'Noto Sans SC', 'Microsoft YaHei', 'Noto Serif SC', serif;
   background: var(--bg);
-  color: var(--text);
-  line-height: 1.8;
-  font-size: 18px;
+  color: var(--text-primary);
+  line-height: 1.9;
+  font-size: 17px;
 }
 
 /* ===== 顶部导航 ===== */
 .header {
-  background: linear-gradient(135deg, #FDF0EA 0%, #FFF5E6 50%, #E8F5F0 100%);
-  padding: 40px 24px 30px;
+  background: white;
+  padding: 32px 24px 24px;
   text-align: center;
-  border-bottom: 2px solid var(--card-border);
+  border-bottom: 1px solid var(--card-border);
 }
 
 .header h1 {
-  font-size: 2.2em;
-  font-weight: 800;
+  font-size: 1.6em;
+  font-weight: 700;
   color: var(--accent-dark);
-  letter-spacing: 2px;
-  margin-bottom: 8px;
+  letter-spacing: 1px;
 }
 
 .header .subtitle {
-  font-size: 1.05em;
-  color: var(--text-secondary);
-}
-
-.header .subtitle span {
-  display: inline-block;
-  margin: 0 8px;
-}
-
-.header .tagline {
-  margin-top: 12px;
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.header .tagline span {
-  background: white;
-  padding: 4px 16px;
-  border-radius: 20px;
-  font-size: 0.85em;
-  color: var(--text-secondary);
-  box-shadow: 0 1px 4px var(--shadow);
+  margin-top: 4px;
+  font-size: 0.9em;
+  color: var(--text-muted);
 }
 
 /* ===== 主容器 ===== */
 .container {
-  max-width: 960px;
+  max-width: 780px;
   margin: 0 auto;
-  padding: 20px 16px 60px;
+  padding: 16px 16px 60px;
 }
 
-/* ===== 搜索/筛选 ===== */
+/* ===== 搜索 ===== */
 .search-bar {
-  margin-bottom: 24px;
-  display: flex;
-  gap: 12px;
+  margin-bottom: 20px;
 }
 
 .search-bar input {
-  flex: 1;
+  width: 100%;
   padding: 14px 20px;
-  font-size: 1em;
-  border: 2px solid var(--card-border);
+  font-size: 0.95em;
+  border: 1px solid var(--card-border);
   border-radius: var(--radius-sm);
   background: white;
-  color: var(--text);
+  color: var(--text-primary);
   outline: none;
-  transition: border 0.2s;
+  transition: border 0.2s, box-shadow 0.2s;
 }
 
 .search-bar input:focus {
   border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-light);
 }
 
 .search-bar input::placeholder {
@@ -118,221 +97,273 @@ body {
 
 /* ===== 卷标题 ===== */
 .volume-section {
-  margin-bottom: 32px;
+  margin-bottom: 8px;
 }
 
 .volume-header {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 16px;
+  gap: 10px;
+  padding: 12px 16px;
   cursor: pointer;
   user-select: none;
+  background: white;
+  border-radius: var(--radius-sm);
+  margin-bottom: 12px;
+  border: 1px solid var(--card-border);
+  transition: background 0.2s;
+}
+
+.volume-header:hover {
+  background: var(--cream);
 }
 
 .volume-header .vol-num {
   background: var(--accent);
   color: white;
-  font-size: 0.8em;
+  font-size: 0.75em;
   font-weight: 700;
-  padding: 4px 14px;
-  border-radius: 20px;
+  padding: 3px 12px;
+  border-radius: 16px;
   white-space: nowrap;
 }
 
 .volume-header .vol-title {
-  font-size: 1.15em;
-  font-weight: 700;
-  color: var(--text);
+  font-size: 0.95em;
+  font-weight: 600;
+  color: var(--text-primary);
   flex: 1;
 }
 
-.volume-header .vol-toggle {
-  font-size: 1.2em;
+.volume-header .vol-count {
+  font-size: 0.8em;
   color: var(--text-muted);
-  transition: transform 0.3s;
+  margin-right: 6px;
+}
+
+.volume-header .vol-toggle {
+  font-size: 0.85em;
+  color: var(--text-muted);
+  transition: transform 0.25s;
 }
 
 .volume-header.collapsed .vol-toggle {
   transform: rotate(-90deg);
 }
 
-/* ===== 单集卡片：三分区布局 ===== */
+.volume-body {
+  padding-left: 4px;
+}
+
+/* ===== 单集卡片：阅读App风格 ===== */
 .episode-card {
   background: var(--card-bg);
   border: 1px solid var(--card-border);
   border-radius: var(--radius);
   margin-bottom: 20px;
   overflow: hidden;
-  box-shadow: 0 2px 12px var(--shadow);
-  transition: box-shadow 0.3s;
+  box-shadow: 0 1px 6px var(--shadow);
+  transition: box-shadow 0.25s;
 }
 
 .episode-card:hover {
-  box-shadow: 0 4px 20px rgba(180, 140, 100, 0.15);
+  box-shadow: 0 3px 16px var(--shadow-strong);
 }
 
-/* ---- 标题栏 ---- */
-.episode-titlebar {
-  padding: 16px 20px 12px;
-  border-bottom: 1px solid var(--card-border);
+/* ---- 卡片头部：日期 + 阅读时间 ---- */
+.episode-meta {
+  padding: 18px 24px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-muted);
+  font-size: 0.8em;
 }
 
-.episode-titlebar h3 {
-  font-size: 1.05em;
+.episode-meta .date {
+  color: var(--text-muted);
+}
+
+.episode-meta .reading-time {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* ---- 标题 ---- */
+.episode-title-section {
+  padding: 6px 24px 14px;
+}
+
+.episode-title-section h3 {
+  font-size: 1.3em;
   font-weight: 700;
-  color: var(--text);
+  color: var(--text-primary);
   line-height: 1.4;
 }
 
-/* ---- 分区 1/3: 音频 ---- */
+/* ---- 音频条（仿参考图风格）---- */
 .episode-audio {
-  padding: 16px 20px;
-  background: var(--cream);
-  border-bottom: 1px solid var(--card-border);
+  padding: 6px 24px 18px;
 }
 
-.episode-audio audio {
-  width: 100%;
-  height: 54px;
-  border-radius: 8px;
-  outline: none;
-}
-
-.episode-audio audio::-webkit-media-controls-panel {
-  background: var(--cream);
-}
-
-/* 音频上方的播放状态条 */
-.audio-bar {
+/* 自定义音频播放器 */
+.audio-wrapper {
+  background: var(--accent-light);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 10px;
 }
 
-.audio-bar .play-btn {
+.audio-wrapper .play-btn {
   width: 44px;
   height: 44px;
   border-radius: 50%;
   border: none;
   background: var(--accent);
   color: white;
-  font-size: 1.3em;
+  font-size: 1.1em;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.2s, transform 0.1s;
   flex-shrink: 0;
+  transition: background 0.2s, transform 0.1s;
+  box-shadow: 0 2px 8px rgba(212, 131, 90, 0.3);
 }
 
-.audio-bar .play-btn:hover { background: var(--accent-dark); }
-.audio-bar .play-btn:active { transform: scale(0.95); }
-
-.audio-bar .audio-label {
-  font-size: 0.9em;
-  color: var(--text-secondary);
+.audio-wrapper .play-btn:hover {
+  background: var(--accent-dark);
+  box-shadow: 0 3px 12px rgba(212, 131, 90, 0.4);
 }
 
-/* ---- 分区 2/3: 播客文字 ---- */
-.episode-text {
-  padding: 16px 20px;
-  border-bottom: 1px solid var(--card-border);
-  position: relative;
+.audio-wrapper .play-btn:active {
+  transform: scale(0.92);
 }
 
-.episode-text .section-label {
-  font-size: 0.8em;
-  font-weight: 700;
-  color: var(--green);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 8px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
+.audio-wrapper .audio-info {
+  flex: 1;
+  min-width: 0;
 }
 
-.episode-text .section-label::before {
-  content: '📖';
-  font-size: 1em;
-}
-
-.episode-text .text-content {
-  font-size: 1em;
-  line-height: 1.9;
-  color: var(--text);
-  max-height: 300px;
-  overflow-y: auto;
-  padding-right: 4px;
-}
-
-.episode-text .text-content::-webkit-scrollbar {
-  width: 4px;
-}
-
-.episode-text .text-content::-webkit-scrollbar-thumb {
-  background: var(--card-border);
-  border-radius: 2px;
-}
-
-.episode-text .text-content p {
-  margin-bottom: 12px;
-}
-
-/* ---- 分区 3/3: 原文 ---- */
-.episode-original {
-  padding: 16px 20px;
-  position: relative;
-}
-
-.episode-original .section-label {
-  font-size: 0.8em;
-  font-weight: 700;
+.audio-wrapper .audio-label {
+  font-size: 0.75em;
   color: var(--accent);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 8px;
+  margin-bottom: 2px;
+  font-weight: 500;
+}
+
+.audio-wrapper .progress-bar {
+  width: 100%;
+  height: 4px;
+  background: rgba(212, 131, 90, 0.2);
+  border-radius: 2px;
+  position: relative;
+  cursor: pointer;
+  margin: 4px 0;
+}
+
+.audio-wrapper .progress-bar .progress-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 2px;
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+.audio-wrapper .time-display {
+  font-size: 0.72em;
+  color: var(--text-muted);
   display: flex;
-  align-items: center;
-  gap: 6px;
+  justify-content: space-between;
+  margin-top: 1px;
 }
 
-.episode-original .section-label::before {
-  content: '📜';
-  font-size: 1em;
+/* 原生audio隐藏，用自定义控件 */
+.episode-audio audio {
+  display: none;
 }
 
-.episode-original .text-content {
-  font-size: 0.95em;
-  line-height: 1.9;
+/* ---- 内容区 ---- */
+.episode-content {
+  padding: 0 24px 20px;
+  border-top: 1px solid var(--card-border);
+}
+
+.section-tabs {
+  display: flex;
+  gap: 4px;
+  padding: 14px 0 10px;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.section-tab {
+  padding: 6px 14px;
+  font-size: 0.82em;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.section-tab.active {
+  background: var(--green-light);
+  color: var(--green);
+}
+
+.section-tab:hover:not(.active) {
+  background: var(--cream);
   color: var(--text-secondary);
-  max-height: 300px;
+}
+
+.text-panel {
+  padding-top: 14px;
+}
+
+.text-panel .text-content {
+  font-size: 1em;
+  line-height: 2;
+  color: var(--text-primary);
+  max-height: 500px;
   overflow-y: auto;
   padding-right: 4px;
 }
 
-.episode-original .text-content::-webkit-scrollbar {
+.text-panel .text-content::-webkit-scrollbar {
   width: 4px;
 }
 
-.episode-original .text-content::-webkit-scrollbar-thumb {
+.text-panel .text-content::-webkit-scrollbar-thumb {
   background: var(--card-border);
   border-radius: 2px;
+}
+
+.text-panel .text-content p {
+  margin-bottom: 14px;
+  text-indent: 2em;
+}
+
+.text-panel .text-content p:first-child {
+  text-indent: 0;
 }
 
 /* 空内容占位 */
 .text-placeholder {
   color: var(--text-muted);
   font-style: italic;
-  font-size: 0.85em;
+  font-size: 0.9em;
+  text-align: center;
+  padding: 40px 0;
 }
 
-/* ---- 折叠动画 ---- */
-.episode-text,
-.episode-original {
-  transition: all 0.3s ease;
+.text-placeholder .big-icon {
+  font-size: 2em;
+  display: block;
+  margin-bottom: 10px;
 }
 
 /* ===== 页脚 ===== */
@@ -340,7 +371,7 @@ body {
   text-align: center;
   padding: 40px 20px;
   color: var(--text-muted);
-  font-size: 0.85em;
+  font-size: 0.8em;
 }
 
 .footer a {
@@ -348,32 +379,50 @@ body {
   text-decoration: none;
 }
 
-/* ===== 响应式 ===== */
-@media (max-width: 600px) {
-  body { font-size: 16px; }
-  .header h1 { font-size: 1.6em; }
-  .header { padding: 28px 16px 24px; }
-  .container { padding: 12px 10px 40px; }
-  .episode-titlebar { padding: 12px 14px 10px; }
-  .episode-audio { padding: 12px 14px; }
-  .episode-text { padding: 12px 14px; }
-  .episode-original { padding: 12px 14px; }
-  .episode-audio audio { height: 48px; }
+.footer .footer-links {
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
 }
 
-/* ===== 加载/空状态 ===== */
+/* ===== 回到顶部 ===== */
+.back-to-top {
+  position: fixed;
+  bottom: 28px;
+  right: 20px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: white;
+  color: var(--text-secondary);
+  border: 1px solid var(--card-border);
+  font-size: 1em;
+  cursor: pointer;
+  box-shadow: 0 2px 10px var(--shadow);
+  display: none;
+  z-index: 100;
+  transition: all 0.2s;
+}
+
+.back-to-top:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px var(--shadow-strong);
+}
+
+/* ===== 加载状态 ===== */
 .loading {
   text-align: center;
-  padding: 60px 20px;
+  padding: 80px 20px;
   color: var(--text-muted);
 }
 
 .loading .spinner {
   display: inline-block;
-  width: 40px;
-  height: 40px;
-  border: 4px solid var(--card-border);
-  border-top: 4px solid var(--accent);
+  width: 36px;
+  height: 36px;
+  border: 3px solid var(--card-border);
+  border-top: 3px solid var(--accent);
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
   margin-bottom: 16px;
@@ -381,26 +430,22 @@ body {
 
 @keyframes spin { to { transform: rotate(360deg); } }
 
-/* ===== 顶部回到全部按钮 ===== */
-.back-to-top {
-  position: fixed;
-  bottom: 30px;
-  right: 20px;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: var(--accent);
-  color: white;
-  border: none;
-  font-size: 1.2em;
-  cursor: pointer;
-  box-shadow: 0 2px 12px rgba(232, 135, 106, 0.4);
-  display: none;
-  z-index: 100;
-  transition: transform 0.2s;
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { font-size: 16px; }
+  .header { padding: 24px 16px 18px; }
+  .header h1 { font-size: 1.3em; }
+  .container { padding: 10px 8px 40px; }
+  .episode-meta { padding: 14px 16px 0; font-size: 0.75em; }
+  .episode-title-section { padding: 4px 16px 10px; }
+  .episode-title-section h3 { font-size: 1.1em; }
+  .episode-audio { padding: 4px 16px 14px; }
+  .audio-wrapper { padding: 8px 12px; }
+  .audio-wrapper .play-btn { width: 38px; height: 38px; font-size: 1em; }
+  .episode-content { padding: 0 16px 16px; }
+  .section-tabs { padding: 10px 0 8px; }
+  .volume-header { padding: 10px 12px; }
 }
-
-.back-to-top:hover { transform: translateY(-2px); }
 </style>
 </head>
 <body>
@@ -408,16 +453,7 @@ body {
 <!-- ===== 头部 ===== -->
 <header class="header">
   <h1>📖 刘仲敬 · 学习播客</h1>
-  <p class="subtitle">
-    <span>原文朗读</span>
-    <span>·</span>
-    <span>大白话解释</span>
-  </p>
-  <div class="tagline">
-    <span>🔥 零 token</span>
-    <span>🐉 龙一</span>
-    <span>🍎 龙五</span>
-  </div>
+  <p class="subtitle">原文朗读 + 大白话解释 · 零token本地生成</p>
 </header>
 
 <!-- ===== 主容器 ===== -->
@@ -437,8 +473,12 @@ body {
 
   <!-- 页脚 -->
   <footer class="footer">
-    <p>🐉 龙一 · 🍎 龙五 · 全程本地AI零token生成 · 2026</p>
-    <p style="margin-top:8px;"><a href="https://xuexi.familyzhou.cn">xuexi.familyzhou.cn</a></p>
+    <p>🐉 龙一 · 🍎 龙五 · 全程本地AI零token生成</p>
+    <div class="footer-links">
+      <a href="https://xuexi.familyzhou.cn">xuexi.familyzhou.cn</a>
+      <span>·</span>
+      <span>2026</span>
+    </div>
   </footer>
 </div>
 
@@ -447,34 +487,23 @@ body {
 
 <script>
 // ============================================================
-// 数据加载
+// 数据
 // ============================================================
 
 let audioData = {};
 
-// 内置文件清单（fallback，manifest.json 加载失败时使用）
 const FALLBACK_DATA = {
   "01_论国史": ["刘仲敬_第一卷_壹_论国史.mp3"],
   "02_论儒学秦学马学": ["刘仲敬_第一卷_贰_论儒学秦学马学.mp3"]
 };
 
-// 加载 manifest.json
 fetch('manifest.json')
-  .then(r => {
-    if (!r.ok) throw new Error('manifest not found');
-    return r.json();
-  })
-  .then(data => {
-    audioData = data;
-    render(audioData);
-  })
-  .catch(() => {
-    audioData = FALLBACK_DATA;
-    render(FALLBACK_DATA);
-  });
+  .then(r => { if (!r.ok) throw new Error(); return r.json(); })
+  .then(data => { audioData = data; render(data); })
+  .catch(() => { audioData = FALLBACK_DATA; render(FALLBACK_DATA); });
 
 // ============================================================
-// 渲染函数
+// 渲染
 // ============================================================
 
 function render(data) {
@@ -487,83 +516,118 @@ function render(data) {
     return;
   }
 
-  // 生成友好卷名
   function friendlyVolName(volKey) {
-    let name = volKey;
-    // 去除 Vol 前缀
-    name = name.replace(/^Vol/i, '');
-    // 替换下划线为空格
-    name = name.replace(/_/g, ' ');
-    // 去除首尾空格
-    name = name.trim();
-    return name;
+    return volKey.replace(/^Vol/i, '').replace(/_/g, ' ').trim();
   }
 
-  // 获取卷号
   function getVolNumber(volKey) {
     const m = volKey.match(/^Vol?(\d+)/i);
     return m ? parseInt(m[1]) : 99;
   }
 
-  // 排序：按卷号
-  entries.sort((a, b) => {
-    const na = getVolNumber(a[0]);
-    const nb = getVolNumber(b[0]);
-    if (na !== nb) return na - nb;
-    return a[0].localeCompare(b[0]);
-  });
+  function getVolPart(volKey) {
+    const m = volKey.match(/(\d+)$/);
+    return m ? m[1] : '';
+  }
+
+  // 按卷号排序
+  entries.sort((a, b) => getVolNumber(a[0]) - getVolNumber(b[0]) || a[0].localeCompare(b[0]));
+
+  // 为每篇文章生成一个唯一ID（用于audio元素id）
+  let globalId = 0;
 
   let html = '';
 
   for (const [volKey, items] of entries) {
     const volName = friendlyVolName(volKey);
+    const volNum = getVolNumber(volKey);
     const itemEntries = Object.entries(items);
+
+    // 生成一个简短的名字用于折叠区
+    const shortVolName = volName.length > 30 ? volName.substring(0, 28) + '…' : volName;
 
     html += `
     <div class="volume-section" data-volume="${volKey}">
       <div class="volume-header" onclick="toggleVolume(this)">
-        <span class="vol-num">卷 ${getVolNumber(volKey)}</span>
-        <span class="vol-title">${volName}</span>
+        <span class="vol-num">卷 ${volNum}</span>
+        <span class="vol-title">${shortVolName}</span>
+        <span class="vol-count">${itemEntries.length}集</span>
         <span class="vol-toggle">▼</span>
       </div>
       <div class="volume-body">
     `;
 
     for (const [title, mp3File] of itemEntries) {
+      globalId++;
       const mp3Path = volKey + '/' + encodeURIComponent(mp3File);
-      // 精简标题
-      const shortTitle = title.replace(/^(Vol\d+_)?/, '').replace(/_/g, ' ').trim();
+      const aid = 'audio-' + globalId;
+
+      // 标题去卷号去下划线
+      let shortTitle = title
+        .replace(/^(Vol\d+[_\s])+/i, '')
+        .replace(/_/g, ' ')
+        .trim();
+      // 如果标题里有刘仲敬去掉
+      shortTitle = shortTitle.replace(/刘仲敬/g, '').trim();
+      // 去首尾标点
+      shortTitle = shortTitle.replace(/^[_\s·\.]+/, '').trim();
 
       html += `
       <div class="episode-card">
-        <div class="episode-titlebar">
+        <div class="episode-meta">
+          <span class="date">📚 卷${volNum}</span>
+          <span class="reading-time">🎧 原文 + 讲解</span>
+        </div>
+
+        <div class="episode-title-section">
           <h3>${shortTitle}</h3>
         </div>
 
-        <!-- 1/3: 音频 -->
+        <!-- 音频条 -->
         <div class="episode-audio">
-          <div class="audio-bar">
-            <button class="play-btn" onclick="playAudio('${mp3Path}', this)">▶</button>
-            <span class="audio-label">点击收听 · 原文朗读 + 大白话讲解</span>
+          <div class="audio-wrapper">
+            <button class="play-btn" id="playbtn-${aid}" onclick="togglePlay('${aid}')">▶</button>
+            <div class="audio-info">
+              <div class="audio-label">点击播放 · 原文朗读 + 白话讲解</div>
+              <div class="progress-bar" id="progbar-${aid}" onclick="seekAudio(event, '${aid}')">
+                <div class="progress-fill" id="progfill-${aid}"></div>
+              </div>
+              <div class="time-display">
+                <span id="current-${aid}">0:00</span>
+                <span id="duration-${aid}">--:--</span>
+              </div>
+            </div>
           </div>
-          <audio controls preload="none" onplay="onAudioPlay(this)" onpause="onAudioPause(this)">
+          <audio id="${aid}" preload="none" onplay="onAudioPlay('${aid}')" onpause="onAudioPause('${aid}')" ontimeupdate="onTimeUpdate('${aid}')" onloadedmetadata="onLoaded('${aid}')" onended="onAudioEnd('${aid}')">
             <source src="${mp3Path}" type="audio/mpeg">
           </audio>
         </div>
 
-        <!-- 2/3: 播客文字 -->
-        <div class="episode-text" id="text-${volKey}-${encodeURIComponent(mp3File).replace(/\./g,'_')}">
-          <div class="section-label">播客讲解</div>
-          <div class="text-content">
-            <p class="text-placeholder">📝 播客文字加载中...</p>
+        <!-- 内容区：播客文字 / 原文 切换 -->
+        <div class="episode-content">
+          <div class="section-tabs">
+            <button class="section-tab active" onclick="switchText(this, 'podo-${aid}')">📖 播客讲解</button>
+            <button class="section-tab" onclick="switchText(this, 'orig-${aid}')">📜 原文</button>
           </div>
-        </div>
 
-        <!-- 3/3: 原文 -->
-        <div class="episode-original" id="orig-${volKey}-${encodeURIComponent(mp3File).replace(/\./g,'_')}">
-          <div class="section-label">原文</div>
-          <div class="text-content">
-            <p class="text-placeholder">📜 原文加载中...</p>
+          <div class="text-panel" id="podo-${aid}">
+            <div class="text-content">
+              <div class="text-placeholder">
+                <span class="big-icon">🎙️</span>
+                播客文字待整理<br>
+                <span style="font-size:0.8em;color:var(--text-muted);">内容将陆续补充</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-panel" id="orig-${aid}" style="display:none;">
+            <div class="text-content">
+              <div class="text-placeholder">
+                <span class="big-icon">📜</span>
+                原文待整理<br>
+                <span style="font-size:0.8em;color:var(--text-muted);">内容将陆续补充</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>`;
@@ -578,10 +642,10 @@ function render(data) {
 }
 
 // ============================================================
-// 交互功能
+// 交互
 // ============================================================
 
-// 展开/收起卷
+// 卷折叠
 function toggleVolume(header) {
   header.classList.toggle('collapsed');
   const body = header.nextElementSibling;
@@ -590,71 +654,107 @@ function toggleVolume(header) {
   }
 }
 
-// 搜索筛选
+// 搜索
 function filterVolumes() {
   const q = document.getElementById('searchInput').value.toLowerCase();
-  const sections = document.querySelectorAll('.volume-section');
-
-  sections.forEach(section => {
+  document.querySelectorAll('.volume-section').forEach(section => {
     const title = section.querySelector('.vol-title').textContent.toLowerCase();
     const cards = section.querySelectorAll('.episode-card');
     const body = section.querySelector('.volume-body');
+    let hasMatch = q === '';
 
-    // 卷标题匹配 → 全部显示
-    if (title.includes(q) || q === '') {
-      section.style.display = '';
-      cards.forEach(c => c.style.display = '');
-      if (body) body.style.display = '';
-      return;
-    }
-
-    // 单集标题匹配
-    let hasMatch = false;
     cards.forEach(card => {
       const cardTitle = card.querySelector('h3').textContent.toLowerCase();
-      if (cardTitle.includes(q)) {
-        card.style.display = '';
-        hasMatch = true;
-      } else {
-        card.style.display = 'none';
-      }
+      const match = q === '' || title.includes(q) || cardTitle.includes(q);
+      card.style.display = match ? '' : 'none';
+      if (match) hasMatch = true;
     });
 
-    if (hasMatch) {
-      section.style.display = '';
-      if (body) body.style.display = '';
-    } else {
-      section.style.display = 'none';
-    }
+    section.style.display = hasMatch ? '' : 'none';
+    if (q !== '' && body) body.style.display = '';
   });
 }
 
-// 音频播放控制
-function playAudio(path, btn) {
-  const card = btn.closest('.episode-card');
-  const audio = card.querySelector('audio');
-  if (audio) {
+// 音频 - 播放/暂停
+function togglePlay(aid) {
+  const audio = document.getElementById(aid);
+  if (!audio) return;
+  if (audio.paused) {
     audio.play();
-    btn.textContent = '⏸';
+  } else {
+    audio.pause();
   }
 }
 
-function onAudioPlay(audio) {
-  const card = audio.closest('.episode-card');
-  const btn = card.querySelector('.play-btn');
+function onAudioPlay(aid) {
+  const btn = document.getElementById('playbtn-' + aid);
   if (btn) btn.textContent = '⏸';
 }
 
-function onAudioPause(audio) {
-  const card = audio.closest('.episode-card');
-  const btn = card.querySelector('.play-btn');
+function onAudioPause(aid) {
+  const btn = document.getElementById('playbtn-' + aid);
   if (btn) btn.textContent = '▶';
 }
 
-// 回到顶部按钮
+function onAudioEnd(aid) {
+  const btn = document.getElementById('playbtn-' + aid);
+  if (btn) btn.textContent = '▶';
+  const fill = document.getElementById('progfill-' + aid);
+  if (fill) fill.style.width = '0%';
+  const cur = document.getElementById('current-' + aid);
+  if (cur) cur.textContent = '0:00';
+}
+
+function onTimeUpdate(aid) {
+  const audio = document.getElementById(aid);
+  if (!audio || !audio.duration) return;
+  const pct = (audio.currentTime / audio.duration) * 100;
+  const fill = document.getElementById('progfill-' + aid);
+  if (fill) fill.style.width = pct + '%';
+  const cur = document.getElementById('current-' + aid);
+  if (cur) cur.textContent = formatTime(audio.currentTime);
+}
+
+function onLoaded(aid) {
+  const audio = document.getElementById(aid);
+  if (!audio) return;
+  const dur = document.getElementById('duration-' + aid);
+  if (dur) dur.textContent = formatTime(audio.duration);
+}
+
+function seekAudio(e, aid) {
+  const audio = document.getElementById(aid);
+  if (!audio || !audio.duration) return;
+  const bar = document.getElementById('progbar-' + aid);
+  if (!bar) return;
+  const rect = bar.getBoundingClientRect();
+  const pct = (e.clientX - rect.left) / rect.width;
+  audio.currentTime = pct * audio.duration;
+}
+
+function formatTime(s) {
+  if (!s || isNaN(s)) return '--:--';
+  const m = Math.floor(s / 60);
+  const sec = Math.floor(s % 60);
+  return m + ':' + (sec < 10 ? '0' : '') + sec;
+}
+
+// 内容切换（播客文字/原文）
+function switchText(btn, panelId) {
+  const tabs = btn.parentElement.querySelectorAll('.section-tab');
+  tabs.forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+
+  const content = btn.closest('.episode-content');
+  content.querySelectorAll('.text-panel').forEach(p => p.style.display = 'none');
+  const panel = document.getElementById(panelId);
+  if (panel) panel.style.display = '';
+}
+
+// 回到顶部
 window.addEventListener('scroll', () => {
   const btn = document.getElementById('backToTop');
-  btn.style.display = window.scrollY > 400 ? 'block' : 'none';
+  if (btn) btn.style.display = window.scrollY > 400 ? 'block' : 'none';
 });
 </script>
 </body>
