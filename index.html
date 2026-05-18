@@ -547,7 +547,31 @@ function filterVolumes() {
   });
 }
 
-function tp(id) { const a=document.getElementById(id); if(!a)return; a.paused?a.play():a.pause(); }
+let currentAudio = null;
+
+function tp(id) {
+  const a = document.getElementById(id);
+  if (!a) return;
+  
+  // If another audio is playing, pause it (keep its position)
+  if (currentAudio && currentAudio !== id) {
+    const prev = document.getElementById(currentAudio);
+    if (prev && !prev.paused) {
+      prev.pause();
+      // Update its play button
+      const pb = document.getElementById('pb' + currentAudio);
+      if (pb) pb.textContent = '▶';
+    }
+  }
+  
+  if (a.paused) {
+    a.play();
+    currentAudio = id;
+  } else {
+    a.pause();
+    if (currentAudio === id) currentAudio = null;
+  }
+}
 function onp(id) { const b=document.getElementById('pb'+id); if(b)b.textContent='⏸'; }
 function onpp(id) { const b=document.getElementById('pb'+id); if(b)b.textContent='▶'; }
 function one(id) {
