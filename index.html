@@ -6,42 +6,35 @@
 <title>自我成长学堂</title>
 <style>
 /* ============================================================
-   自我成长学堂
-   三分区：音频条 + 播客文字 + 原文 · 同时可见
-   暖色调小清新 · 大字版
+   参考风格：纯阅读App · 无框无装饰
+   文字即内容 · 暖色底 · 大字版
    ============================================================ */
 
 :root {
   --bg: #F5F0EB;
-  --card-bg: #FFFFFF;
-  --card-border: #E8E0D6;
   --text: #2C241A;
-  --text-secondary: #7C6E5E;
-  --text-muted: #B2A494;
+  --text-soft: #7C6E5E;
+  --text-light: #B2A494;
   --accent: #C47A5A;
-  --accent-light: #F5EDE6;
-  --accent-dark: #A86142;
+  --accent-light: #FAF2EC;
+  --accent-border: #E8DCD2;
   --green: #7AAD94;
-  --green-light: #EEF5F0;
-  --coral: #D48A6A;
-  --gold: #C4A46A;
+  --green-light: #F0F7F3;
   --cream: #FFFCF7;
-  --shadow: rgba(140, 100, 60, 0.06);
-  --radius: 14px;
   --radius-sm: 8px;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  font-family: -apple-system, 'PingFang SC', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+  font-family: -apple-system, 'PingFang SC', 'Noto Sans SC', 'Microsoft YaHei', serif;
   background: var(--bg);
   color: var(--text);
   line-height: 2;
   font-size: 36px;
 }
 
-/* ===== 顶部头栏 ===== */
+/* ===== 顶部 ===== */
 .top-bar {
   background: var(--accent);
   color: white;
@@ -55,50 +48,43 @@ body {
 }
 
 .top-bar h1 {
-  font-size: 1.2em;
+  font-size: 1em;
   font-weight: 700;
   letter-spacing: 1px;
 }
 
-.top-bar .top-icons {
-  display: flex;
-  gap: 12px;
-  font-size: 1.1em;
-}
-
-/* ===== 搜索栏 ===== */
+/* ===== 搜索 ===== */
 .search-wrap {
-  max-width: 980px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 12px 16px;
+  padding: 16px 20px 8px;
 }
 
 .search-wrap input {
   width: 100%;
   padding: 14px 18px;
-  font-size: 1em;
-  border: 1px solid var(--card-border);
+  font-size: 0.7em;
+  border: 1px solid var(--accent-border);
   border-radius: var(--radius-sm);
   background: white;
   color: var(--text);
   outline: none;
-  transition: border 0.2s, box-shadow 0.2s;
+  transition: border 0.2s;
 }
 
 .search-wrap input:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px var(--accent-light);
 }
 
 .search-wrap input::placeholder {
-  color: var(--text-muted);
+  color: var(--text-light);
 }
 
 /* ===== 主容器 ===== */
 .container {
-  max-width: 980px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 0 16px 80px;
+  padding: 0 20px 80px;
 }
 
 /* ===== 卷标题 ===== */
@@ -110,13 +96,13 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 12px 16px;
-  margin: 12px 0 8px;
+  padding: 14px 16px;
+  margin: 16px 0 12px;
   cursor: pointer;
   user-select: none;
   background: white;
   border-radius: var(--radius-sm);
-  border: 1px solid var(--card-border);
+  border: 1px solid var(--accent-border);
   transition: background 0.15s;
 }
 
@@ -127,26 +113,26 @@ body {
 .volume-header .vol-num {
   background: var(--accent);
   color: white;
-  font-size: 0.7em;
+  font-size: 0.5em;
   font-weight: 700;
   padding: 2px 12px;
   border-radius: 14px;
 }
 
 .volume-header .vol-title {
-  font-size: 0.9em;
+  font-size: 0.7em;
   font-weight: 600;
   flex: 1;
 }
 
 .volume-header .vol-count {
-  font-size: 0.75em;
-  color: var(--text-muted);
+  font-size: 0.55em;
+  color: var(--text-light);
 }
 
 .volume-header .vol-arrow {
-  font-size: 0.75em;
-  color: var(--text-muted);
+  font-size: 0.55em;
+  color: var(--text-light);
   transition: transform 0.2s;
 }
 
@@ -158,101 +144,78 @@ body {
   padding-left: 2px;
 }
 
-/* ===== 文章卡片（三分区） ===== */
-.article-card {
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: var(--radius);
-  margin-bottom: 18px;
-  overflow: hidden;
-  box-shadow: 0 1px 4px var(--shadow);
+/* ===== 文章（无框无装饰） ===== */
+.article {
+  margin-bottom: 32px;
 }
 
-/* 文章头 */
-.article-header {
-  padding: 18px 22px 0;
+/* 文章头部 */
+.article-head {
+  margin-bottom: 8px;
 }
 
-.article-meta {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.75em;
-  color: var(--text-muted);
-  margin-bottom: 6px;
+.article-head .article-tag {
+  font-size: 0.5em;
+  color: var(--text-light);
+  margin-bottom: 4px;
 }
 
-.article-meta .tag {
-  background: var(--accent-light);
-  color: var(--accent);
-  padding: 1px 10px;
-  border-radius: 10px;
-  font-weight: 500;
-}
-
-.article-title {
-  font-size: 1.25em;
+.article-head .article-title {
+  font-size: 1.1em;
   font-weight: 700;
   line-height: 1.4;
   color: var(--text);
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
-/* ---- 分区1: 音频条 ---- */
-.audio-section {
-  padding: 0 22px 6px;
-}
-
-.audio-bar {
+/* ---- 音频条（轻量） ---- */
+.audio-line {
   display: flex;
   align-items: center;
   gap: 14px;
-  background: var(--cream);
-  border-radius: var(--radius-sm);
-  padding: 12px 16px;
-  border: 1px solid var(--card-border);
+  padding: 8px 0;
+  margin-bottom: 4px;
 }
 
 .play-btn {
-  width: 80px;
-  height: 80px;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
   border: none;
   background: var(--accent);
   color: white;
-  font-size: 2em;
+  font-size: 1.8em;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
   transition: background 0.2s, transform 0.1s;
-  box-shadow: 0 2px 8px rgba(196, 122, 90, 0.3);
+  box-shadow: 0 2px 10px rgba(196, 122, 90, 0.25);
 }
 
-.play-btn:hover { background: var(--accent-dark); }
+.play-btn:hover { background: #A86142; }
 .play-btn:active { transform: scale(0.93); }
 
-.audio-meta {
+.audio-info {
   flex: 1;
   min-width: 0;
 }
 
 .audio-label {
-  font-size: 0.7em;
-  color: var(--accent);
-  font-weight: 500;
+  font-size: 0.5em;
+  color: var(--text-soft);
   margin-bottom: 4px;
 }
 
 .progress-track {
   width: 100%;
-  height: 8px;
-  background: rgba(196, 122, 90, 0.15);
-  border-radius: 4px;
+  height: 6px;
+  background: var(--accent-border);
+  border-radius: 3px;
   cursor: pointer;
   position: relative;
-  margin: 6px 0;
+  margin: 4px 0;
 }
 
 .progress-fill {
@@ -266,62 +229,38 @@ body {
 .time-row {
   display: flex;
   justify-content: space-between;
-  font-size: 0.7em;
-  color: var(--text-muted);
+  font-size: 0.5em;
+  color: var(--text-light);
 }
 
-/* 隐藏原生audio */
-.article-audio audio { display: none; }
+.article audio { display: none; }
 
-/* ---- 分区2: 播客文字 ---- */
-.section-divider {
-  height: 1px;
-  background: var(--card-border);
-  margin: 0 24px;
-}
-
-.text-section {
-  padding: 18px 24px;
-}
-
-.section-header {
+/* ---- 正文 ---- */
+.section-label {
+  font-size: 0.55em;
+  font-weight: 600;
+  color: var(--text-light);
+  margin: 16px 0 8px;
+  letter-spacing: 1px;
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 12px;
+  gap: 6px;
 }
 
-.section-header .label-icon {
-  font-size: 1em;
+.section-label .dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
 }
 
-.section-header .label-text {
-  font-size: 0.7em;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-
-.label-podcast {
-  color: var(--green);
-}
-
-.label-original {
-  color: var(--accent);
-}
+.dot-green { background: var(--green); }
+.dot-coral { background: var(--accent); }
 
 .text-body {
-  font-size: 1em;
+  font-size: 0.85em;
   line-height: 2.1;
   color: var(--text);
-  max-height: 320px;
-  overflow-y: auto;
-  padding-right: 8px;
-}
-
-.text-body::-webkit-scrollbar { width: 4px; }
-.text-body::-webkit-scrollbar-thumb {
-  background: var(--card-border);
-  border-radius: 2px;
 }
 
 .text-body p {
@@ -335,28 +274,24 @@ body {
 
 .text-empty {
   text-align: center;
-  padding: 40px 0;
-  color: var(--text-muted);
+  padding: 32px 0;
+  color: var(--text-light);
   font-style: italic;
+  font-size: 0.65em;
 }
 
-.text-empty .big-icon {
-  font-size: 1.5em;
+.text-empty .icon {
+  font-size: 1.3em;
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 /* ===== 页脚 ===== */
 .footer {
   text-align: center;
-  padding: 40px 20px 20px;
-  color: var(--text-muted);
-  font-size: 0.8em;
-}
-
-.footer a {
-  color: var(--accent);
-  text-decoration: none;
+  padding: 40px 20px;
+  color: var(--text-light);
+  font-size: 0.45em;
 }
 
 /* ===== 回到顶部 ===== */
@@ -368,33 +303,27 @@ body {
   height: 40px;
   border-radius: 50%;
   background: white;
-  color: var(--text-secondary);
-  border: 1px solid var(--card-border);
-  font-size: 1em;
+  color: var(--text-soft);
+  border: 1px solid var(--accent-border);
+  font-size: 0.5em;
   cursor: pointer;
-  box-shadow: 0 2px 8px var(--shadow);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
   display: none;
   z-index: 100;
-  transition: all 0.2s;
-}
-
-.back-top:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 3px 12px rgba(140, 100, 60, 0.12);
 }
 
 /* ===== 加载 ===== */
 .loading {
   text-align: center;
   padding: 80px 20px;
-  color: var(--text-muted);
+  color: var(--text-light);
 }
 
 .spinner {
   display: inline-block;
   width: 30px;
   height: 30px;
-  border: 3px solid var(--card-border);
+  border: 3px solid var(--accent-border);
   border-top: 3px solid var(--accent);
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
@@ -407,59 +336,40 @@ body {
 @media (max-width: 600px) {
   body { font-size: 22px; }
   .top-bar { padding: 14px 14px 10px; }
-  .top-bar h1 { font-size: 1em; }
-  .container { padding: 0 6px 60px; }
-  .search-wrap { padding: 8px 10px; }
-  .search-wrap input { padding: 12px 14px; font-size: 0.95em; }
-  .article-header { padding: 14px 14px 0; }
-  .article-title { font-size: 1em; }
-  .audio-section { padding: 0 14px 4px; }
-  .audio-bar { padding: 10px 12px; gap: 10px; }
-  .play-btn { width: 60px; height: 60px; font-size: 1.5em; }
-  .text-section { padding: 12px 14px; }
-  .section-divider { margin: 0 14px; }
-  .volume-header { padding: 10px 12px; }
+  .top-bar h1 { font-size: 0.85em; }
+  .container { padding: 0 12px 60px; }
+  .search-wrap { padding: 10px 12px 4px; }
+  .play-btn { width: 56px; height: 56px; font-size: 1.4em; }
 }
 </style>
 </head>
 <body>
 
-<!-- 顶部 -->
 <div class="top-bar">
   <h1>📖 自我成长学堂</h1>
-  <div class="top-icons">
-    <span>🔍</span>
-    <span>⚙</span>
-  </div>
+  <span>🔍</span>
 </div>
 
-<!-- 搜索 -->
 <div class="search-wrap">
-  <input type="text" id="searchInput" placeholder="🔍 搜索文章标题..." oninput="filterVolumes()">
+  <input type="text" id="searchInput" placeholder="🔍 搜索文章..." oninput="filterVolumes()">
 </div>
 
-<!-- 主内容 -->
 <div class="container">
   <div id="content">
-    <div class="loading" id="loading">
+    <div class="loading">
       <div class="spinner"></div>
-      <p>正在加载音频列表...</p>
+      <p>加载中...</p>
     </div>
   </div>
-
   <footer class="footer">
     <p>🐉 龙一 · 🍎 龙五 · 零token本地生成</p>
-    <p style="margin-top:4px;"><a href="https://xuexi.familyzhou.cn">xuexi.familyzhou.cn</a></p>
+    <p style="margin-top:2px;">xuexi.familyzhou.cn</p>
   </footer>
 </div>
 
 <button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
 <script>
-// ============================================================
-// 数据
-// ============================================================
-
 let audioData = {};
 
 fetch('manifest.json')
@@ -470,7 +380,6 @@ fetch('manifest.json')
 function render(data) {
   const c = document.getElementById('content');
   c.innerHTML = '';
-
   const entries = Object.entries(data);
   if (!entries.length) { c.innerHTML = '<div class="loading"><p>暂无内容</p></div>'; return; }
 
@@ -478,7 +387,6 @@ function render(data) {
   function volName(k) { return k.replace(/^Vol/i,'').replace(/_/g,' ').replace(/刘仲敬/g,'').trim(); }
 
   entries.sort((a,b) => volNum(a[0]) - volNum(b[0]) || a[0].localeCompare(b[0]));
-
   let gid = 0, html = '';
 
   for (const [vk, items] of entries) {
@@ -489,7 +397,7 @@ function render(data) {
       <div class="volume-header" onclick="toggle(this)">
         <span class="vol-num">卷${num}</span>
         <span class="vol-title">${shortVn}</span>
-        <span class="vol-count">${ientries.length}集</span>
+        <span class="vol-count">${ientries.length}篇</span>
         <span class="vol-arrow">▼</span>
       </div>
       <div class="volume-body">`;
@@ -502,78 +410,57 @@ function render(data) {
       st = st.replace(/^[_\s·\.]+/,'').trim();
 
       html += `
-      <div class="article-card">
-        <div class="article-header">
-          <div class="article-meta">
-            <span class="tag">卷${num}</span>
-            <span>原文朗读 + 白话讲解 · 零token</span>
-          </div>
+      <div class="article">
+        <div class="article-head">
+          <div class="article-tag">📚 卷${num} · 原文+讲解</div>
           <div class="article-title">${st}</div>
         </div>
 
-        <!-- 分区1: 音频 -->
-        <div class="audio-section">
-          <div class="audio-bar">
-            <button class="play-btn" id="pb${id}" onclick="tp('${id}')">▶</button>
-            <div class="audio-meta">
-              <div class="audio-label">🎧 点击播放 · 原文+讲解</div>
-              <div class="progress-track" id="pt${id}" onclick="sk(event, '${id}')">
-                <div class="progress-fill" id="pf${id}"></div>
-              </div>
-              <div class="time-row">
-                <span id="cu${id}">0:00</span>
-                <span id="du${id}">--:--</span>
-              </div>
+        <div class="audio-line">
+          <button class="play-btn" id="pb${id}" onclick="tp('${id}')">▶</button>
+          <div class="audio-info">
+            <div class="audio-label">点击播放</div>
+            <div class="progress-track" id="pt${id}" onclick="sk(event,'${id}')">
+              <div class="progress-fill" id="pf${id}"></div>
             </div>
-          </div>
-          <audio id="${id}" preload="none" onplay="onp('${id}')" onpause="onpp('${id}')" ontimeupdate="otu('${id}')" onloadedmetadata="omd('${id}')" onended="one('${id}')">
-            <source src="${path}" type="audio/mpeg">
-          </audio>
-        </div>
-
-        <!-- 分隔线 -->
-        <div class="section-divider"></div>
-
-        <!-- 分区2: 播客文字 -->
-        <div class="text-section">
-          <div class="section-header">
-            <span class="label-icon">🎙️</span>
-            <span class="label-text label-podcast">播客讲解</span>
-          </div>
-          <div class="text-body">
-            <div class="text-empty">
-              <span class="big-icon">📝</span>
-              讲解文字待整理
+            <div class="time-row">
+              <span id="cu${id}">0:00</span>
+              <span id="du${id}">--:--</span>
             </div>
           </div>
         </div>
 
-        <!-- 分隔线 -->
-        <div class="section-divider"></div>
+        <audio id="${id}" preload="none" onplay="onp('${id}')" onpause="onpp('${id}')" ontimeupdate="otu('${id}')" onloadedmetadata="omd('${id}')" onended="one('${id}')">
+          <source src="${path}" type="audio/mpeg">
+        </audio>
 
-        <!-- 分区3: 原文 -->
-        <div class="text-section">
-          <div class="section-header">
-            <span class="label-icon">📜</span>
-            <span class="label-text label-original">原文</span>
+        <div class="section-label">
+          <span class="dot dot-green"></span>
+          播客讲解
+        </div>
+        <div class="text-body">
+          <div class="text-empty">
+            <span class="icon">🎙️</span>
+            讲解文字待整理
           </div>
-          <div class="text-body">
-            <div class="text-empty">
-              <span class="big-icon">📄</span>
-              原文文字待整理
-            </div>
+        </div>
+
+        <div class="section-label">
+          <span class="dot dot-coral"></span>
+          原文
+        </div>
+        <div class="text-body">
+          <div class="text-empty">
+            <span class="icon">📜</span>
+            原文文字待整理
           </div>
         </div>
       </div>`;
     }
-
     html += `</div></div>`;
   }
-
   c.innerHTML = html;
 }
-
-// ======== 交互 ========
 
 function toggle(h) {
   h.classList.toggle('collapsed');
@@ -584,12 +471,12 @@ function toggle(h) {
 function filterVolumes() {
   const q = document.getElementById('searchInput').value.toLowerCase();
   document.querySelectorAll('.volume-section').forEach(s => {
-    const volTitle = s.querySelector('.vol-title').textContent.toLowerCase();
-    const cards = s.querySelectorAll('.article-card');
+    const vt = s.querySelector('.vol-title').textContent.toLowerCase();
+    const cards = s.querySelectorAll('.article');
     let match = q === '';
     cards.forEach(c => {
       const t = c.querySelector('.article-title').textContent.toLowerCase();
-      const m = q === '' || volTitle.includes(q) || t.includes(q);
+      const m = q === '' || vt.includes(q) || t.includes(q);
       c.style.display = m ? '' : 'none';
       if (m) match = true;
     });
@@ -598,44 +485,32 @@ function filterVolumes() {
   });
 }
 
-// 音频控制
-function tp(id) {
-  const a = document.getElementById(id);
-  if (!a) return;
-  a.paused ? a.play() : a.pause();
-}
-function onp(id) { const b = document.getElementById('pb'+id); if (b) b.textContent = '⏸'; }
-function onpp(id) { const b = document.getElementById('pb'+id); if (b) b.textContent = '▶'; }
+function tp(id) { const a=document.getElementById(id); if(!a)return; a.paused?a.play():a.pause(); }
+function onp(id) { const b=document.getElementById('pb'+id); if(b)b.textContent='⏸'; }
+function onpp(id) { const b=document.getElementById('pb'+id); if(b)b.textContent='▶'; }
 function one(id) {
-  const b = document.getElementById('pb'+id); if (b) b.textContent = '▶';
-  const f = document.getElementById('pf'+id); if (f) f.style.width = '0%';
-  const c = document.getElementById('cu'+id); if (c) c.textContent = '0:00';
+  const b=document.getElementById('pb'+id); if(b)b.textContent='▶';
+  const f=document.getElementById('pf'+id); if(f)f.style.width='0%';
+  const c=document.getElementById('cu'+id); if(c)c.textContent='0:00';
 }
 function otu(id) {
-  const a = document.getElementById(id); if (!a || !a.duration) return;
-  const f = document.getElementById('pf'+id); if (f) f.style.width = (a.currentTime / a.duration * 100) + '%';
-  const c = document.getElementById('cu'+id); if (c) c.textContent = fm(a.currentTime);
+  const a=document.getElementById(id); if(!a||!a.duration)return;
+  const f=document.getElementById('pf'+id); if(f)f.style.width=(a.currentTime/a.duration*100)+'%';
+  const c=document.getElementById('cu'+id); if(c)c.textContent=fm(a.currentTime);
 }
-function omd(id) {
-  const a = document.getElementById(id); if (!a) return;
-  const d = document.getElementById('du'+id); if (d) d.textContent = fm(a.duration);
-}
-function sk(e, id) {
+function omd(id) { const a=document.getElementById(id); if(!a)return; const d=document.getElementById('du'+id); if(d)d.textContent=fm(a.duration); }
+function sk(e,id) {
   e.stopPropagation();
-  const a = document.getElementById(id); if (!a || !a.duration) return;
-  const bar = document.getElementById('pt'+id); if (!bar) return;
-  const r = bar.getBoundingClientRect();
-  a.currentTime = ((e.clientX - r.left) / r.width) * a.duration;
+  const a=document.getElementById(id); if(!a||!a.duration)return;
+  const bar=document.getElementById('pt'+id); if(!bar)return;
+  const r=bar.getBoundingClientRect();
+  a.currentTime=((e.clientX-r.left)/r.width)*a.duration;
 }
-function fm(s) {
-  if (!s || isNaN(s)) return '--:--';
-  return Math.floor(s/60) + ':' + (Math.floor(s%60) < 10 ? '0' : '') + Math.floor(s%60);
-}
+function fm(s) { if(!s||isNaN(s))return'--:--'; return Math.floor(s/60)+':'+(Math.floor(s%60)<10?'0':'')+Math.floor(s%60); }
 
-// 回到顶部
 window.addEventListener('scroll', () => {
-  const b = document.getElementById('backTop');
-  if (b) b.style.display = window.scrollY > 400 ? 'block' : 'none';
+  const b=document.getElementById('backTop');
+  if(b)b.style.display=window.scrollY>400?'block':'none';
 });
 </script>
 </body>
