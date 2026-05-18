@@ -275,30 +275,30 @@ body {
 
 /* ---- 分区2: 播客文字 ---- */
 .section-divider {
-  height: 2px;
+  height: 1px;
   background: var(--card-border);
-  margin: 0 22px;
+  margin: 0 24px;
 }
 
 .text-section {
-  padding: 14px 22px;
+  padding: 18px 24px;
 }
 
 .section-header {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .section-header .label-icon {
-  font-size: 1.1em;
+  font-size: 1em;
 }
 
 .section-header .label-text {
-  font-size: 0.85em;
+  font-size: 0.7em;
   font-weight: 700;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
 }
 
 .label-podcast {
@@ -311,11 +311,11 @@ body {
 
 .text-body {
   font-size: 1em;
-  line-height: 2;
+  line-height: 2.1;
   color: var(--text);
-  max-height: 260px;
+  max-height: 320px;
   overflow-y: auto;
-  padding-right: 6px;
+  padding-right: 8px;
 }
 
 .text-body::-webkit-scrollbar { width: 4px; }
@@ -325,25 +325,25 @@ body {
 }
 
 .text-body p {
-  margin-bottom: 12px;
+  margin-bottom: 14px;
+  text-indent: 2em;
+}
+
+.text-body p:first-child {
+  text-indent: 0;
 }
 
 .text-empty {
   text-align: center;
-  padding: 28px 0;
+  padding: 40px 0;
   color: var(--text-muted);
   font-style: italic;
 }
 
 .text-empty .big-icon {
-  font-size: 1.8em;
+  font-size: 1.5em;
   display: block;
-  margin-bottom: 8px;
-}
-
-/* ---- 分区3: 原文 ---- */
-.text-section:last-child {
-  border-bottom: none;
+  margin-bottom: 10px;
 }
 
 /* ===== 页脚 ===== */
