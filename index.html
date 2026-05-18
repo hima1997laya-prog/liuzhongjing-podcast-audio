@@ -400,11 +400,18 @@ body {
 
 <script>
 let audioData = {};
+let textContent = {};
 
-fetch('manifest.json')
-  .then(r => { if (!r.ok) throw new Error(); return r.json(); })
-  .then(d => { audioData = d; render(d); })
-  .catch(() => { render({"01_论国史":{"第一卷_壹_论国史":"刘仲敬_第一卷_壹_论国史.mp3"}}); });
+Promise.all([
+  fetch('manifest.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }),
+  fetch('text_content.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }).catch(() => ({})),
+]).then(([d, t]) => {
+  audioData = d;
+  textContent = t;
+  render(d);
+}).catch(() => {
+  render({"01_论国史":{"第一卷_壹_论国史":"刘仲敬_第一卷_壹_论国史.mp3"}});
+});
 
 function render(data) {
   const c = document.getElementById('content');
@@ -465,16 +472,52 @@ function render(data) {
 
         <div class="article-body">
           <div class="section-label"><span class="tag-box">讲解</span>播客讲解</div>
-          <div class="text-body">
-            <div class="text-empty"><span class="icon">🎙️</span>讲解文字待整理</div>
+          <div class="text-body" id="tb_ex_${id}">
+            <p class="text-empty" id="empty_ex_${id}"><span class="icon">🎙️</span>讲解文字待整理</p>
           </div>
 
           <div class="section-label"><span class="tag-box">原文</span>原文</div>
-          <div class="text-body">
-            <div class="text-empty"><span class="icon">📜</span>原文文字待整理</div>
+          <div class="text-body" id="tb_or_${id}">
+            <p class="text-empty" id="empty_or_${id}"><span class="icon">📜</span>原文文字待整理</p>
           </div>
         </div>
       </div>`;
+
+    // Populate text content
+    const artKey = Object.keys(textContent[vk] || {}).find(k => k === title || title.includes(k) || k.includes(title));
+    if (artKey && textContent[vk] && textContent[vk][artKey]) {
+      const tc = textContent[vk][artKey];
+      // Original text
+      if (tc.original && tc.original.length > 50) {
+        const orDiv = document.getElementById('tb_or_${id}');
+        const empty = document.getElementById('empty_or_${id}');
+        if (empty) empty.remove();
+        if (orDiv) {
+          tc.original.split('\n').forEach(p => {
+            if (p.trim()) {
+              const el = document.createElement('p');
+              el.textContent = p.trim();
+              orDiv.appendChild(el);
+            }
+          });
+        }
+      }
+      // Podcast explanation
+      if (tc.explanation && tc.explanation.length > 50) {
+        const exDiv = document.getElementById('tb_ex_${id}');
+        const empty = document.getElementById('empty_ex_${id}');
+        if (empty) empty.remove();
+        if (exDiv) {
+          tc.explanation.split('\n').forEach(p => {
+            if (p.trim()) {
+              const el = document.createElement('p');
+              el.textContent = p.trim();
+              exDiv.appendChild(el);
+            }
+          });
+        }
+      }
+    }
     }
     html += `</div></div>`;
   }
