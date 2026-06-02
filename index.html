@@ -483,34 +483,57 @@ function render(data) {
         </div>
       </div>`;
 
-    // Populate text content
-    const artKey = Object.keys(textContent[vk] || {}).find(k => k === title || title.includes(k) || k.includes(title));
-    if (artKey && textContent[vk] && textContent[vk][artKey]) {
-      const tc = textContent[vk][artKey];
+    // (Populate moved to after c.innerHTML assignment)
+    }
+    html += `</div></div>`;
+  }
+  c.innerHTML = html;
+
+  // Populate text content from text_content.json
+  for (const [vk, items] of Object.entries(audioData)) {
+    let artIdx = 0;
+    for (const [title, mp3] of Object.entries(items)) {
+      artIdx++;
+      let gid2 = 0;
+      // find the matching gid by iterating previous entries
+      for (const [pvk, pitems] of Object.entries(audioData)) {
+        for (const [ptitle] of Object.entries(pitems)) {
+          gid2++;
+          if (pvk === vk && ptitle === title) break;
+        }
+        if (pvk === vk) break;
+      }
+      const id = 'a' + gid2;
+      const tc = textContent[vk] && textContent[vk][title];
+      if (!tc) continue;
+      
       // Original text
-      if (tc.original && tc.original.length > 50) {
-        const orDiv = document.getElementById('tb_or_${id}');
-        const empty = document.getElementById('empty_or_${id}');
-        if (empty) empty.remove();
+      if (tc.original && tc.original.trim().length > 50) {
+        const emptyOr = document.getElementById('empty_or_' + id);
+        if (emptyOr) emptyOr.remove();
+        const orDiv = document.getElementById('tb_or_' + id);
         if (orDiv) {
-          tc.original.split('\n').forEach(p => {
+          orDiv.innerHTML = '';
+          tc.original.split('\n').forEach(function(p) {
             if (p.trim()) {
-              const el = document.createElement('p');
+              var el = document.createElement('p');
               el.textContent = p.trim();
               orDiv.appendChild(el);
             }
           });
         }
       }
+      
       // Podcast explanation
-      if (tc.explanation && tc.explanation.length > 50) {
-        const exDiv = document.getElementById('tb_ex_${id}');
-        const empty = document.getElementById('empty_ex_${id}');
-        if (empty) empty.remove();
+      if (tc.explanation && tc.explanation.trim().length > 50) {
+        const emptyEx = document.getElementById('empty_ex_' + id);
+        if (emptyEx) emptyEx.remove();
+        const exDiv = document.getElementById('tb_ex_' + id);
         if (exDiv) {
-          tc.explanation.split('\n').forEach(p => {
+          exDiv.innerHTML = '';
+          tc.explanation.split('\n').forEach(function(p) {
             if (p.trim()) {
-              const el = document.createElement('p');
+              var el = document.createElement('p');
               el.textContent = p.trim();
               exDiv.appendChild(el);
             }
@@ -518,10 +541,7 @@ function render(data) {
         }
       }
     }
-    }
-    html += `</div></div>`;
   }
-  c.innerHTML = html;
 }
 
 function toggle(h) {
