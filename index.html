@@ -489,55 +489,48 @@ function render(data) {
   }
   c.innerHTML = html;
 
-  // Populate text content from text_content.json
-  for (const [vk, items] of Object.entries(audioData)) {
-    let artIdx = 0;
-    for (const [title, mp3] of Object.entries(items)) {
-      artIdx++;
-      let gid2 = 0;
-      // find the matching gid by iterating previous entries
-      for (const [pvk, pitems] of Object.entries(audioData)) {
-        for (const [ptitle] of Object.entries(pitems)) {
-          gid2++;
-          if (pvk === vk && ptitle === title) break;
+  // Populate text content from text_content.json (after DOM is ready)
+  if (typeof textContent !== 'undefined' && Object.keys(textContent).length > 0) {
+    let populateIdx = 0;
+    for (const [pvk, pitems] of Object.entries(audioData)) {
+      for (const [ptitle] of Object.entries(pitems)) {
+        populateIdx++;
+        const pid = 'a' + populateIdx;
+        const ptc = textContent[pvk] && textContent[pvk][ptitle];
+        if (!ptc) continue;
+
+        // Original text
+        if (ptc.original && ptc.original.trim().length > 50) {
+          const emptyOr = document.getElementById('empty_or_' + pid);
+          if (emptyOr) emptyOr.remove();
+          const orDiv = document.getElementById('tb_or_' + pid);
+          if (orDiv && orDiv.querySelector('.text-empty')) {
+            orDiv.innerHTML = '';
+            ptc.original.split('\n').forEach(function(p) {
+              if (p.trim()) {
+                var el = document.createElement('p');
+                el.textContent = p.trim();
+                orDiv.appendChild(el);
+              }
+            });
+          }
         }
-        if (pvk === vk) break;
-      }
-      const id = 'a' + gid2;
-      const tc = textContent[vk] && textContent[vk][title];
-      if (!tc) continue;
-      
-      // Original text
-      if (tc.original && tc.original.trim().length > 50) {
-        const emptyOr = document.getElementById('empty_or_' + id);
-        if (emptyOr) emptyOr.remove();
-        const orDiv = document.getElementById('tb_or_' + id);
-        if (orDiv) {
-          orDiv.innerHTML = '';
-          tc.original.split('\n').forEach(function(p) {
-            if (p.trim()) {
-              var el = document.createElement('p');
-              el.textContent = p.trim();
-              orDiv.appendChild(el);
-            }
-          });
-        }
-      }
-      
-      // Podcast explanation
-      if (tc.explanation && tc.explanation.trim().length > 50) {
-        const emptyEx = document.getElementById('empty_ex_' + id);
-        if (emptyEx) emptyEx.remove();
-        const exDiv = document.getElementById('tb_ex_' + id);
-        if (exDiv) {
-          exDiv.innerHTML = '';
-          tc.explanation.split('\n').forEach(function(p) {
-            if (p.trim()) {
-              var el = document.createElement('p');
-              el.textContent = p.trim();
-              exDiv.appendChild(el);
-            }
-          });
+
+        // Podcast explanation
+        if (ptc.explanation && ptc.explanation.trim().length > 50) {
+          const emptyEx = document.getElementById('empty_ex_' + pid);
+          if (emptyEx) emptyEx.remove();
+          const exDiv = document.getElementById('tb_ex_' + pid);
+          if (exDiv && exDiv.querySelector('.text-empty')) {
+            exDiv.innerHTML = '';
+            ptc.explanation.split('\n').forEach(function(p) {
+              if (p.trim()) {
+                var el = document.createElement('p');
+                el.textContent = p.trim();
+                exDiv.appendChild(el);
+              }
+            });
+          }
         }
       }
     }
